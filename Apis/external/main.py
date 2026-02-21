@@ -3,7 +3,6 @@ from contextlib import asynccontextmanager
 from Apis.general.logger import Logger
 from Apis.general.database import init_db
 from .kafka_helper.producers import *
-from .kafka_helper.consumers import *
 from .routes.new import *
 from .routes.status import *
 from .kafka_helper.contracts import *
