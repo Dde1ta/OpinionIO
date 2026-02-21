@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
-from ...general.database import *
+from fastapi import APIRouter, Depends
+from General.database import *
 from ..kafka_helper.producers import *
 from ..kafka_helper.contracts import *
 from ..models import Task

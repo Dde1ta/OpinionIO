@@ -1,5 +1,5 @@
-from Apis.general.kafkaHelper import *
 from .contracts import *
+from General.kafkaHelper import kafka_app
 
 
 @kafka_app.produces(topic="NEW_TASK")

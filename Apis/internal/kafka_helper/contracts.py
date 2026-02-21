@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-
 class BaseContract(BaseModel):
     id: int
 

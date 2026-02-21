@@ -4,3 +4,5 @@ docker-compose.yml
 .gitignore
 .venv
 **/__pycache__
+.env
+*.http
