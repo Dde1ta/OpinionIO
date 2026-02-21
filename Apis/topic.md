@@ -1,4 +1,4 @@
-# This is so that I do not loss my mind :D
+# This is so that I do not lose my mind :D
 
 
 ## External -> Kafka Produces
