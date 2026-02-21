@@ -121,7 +121,7 @@
 
     InfluentialTask:
         id: int
-        tweets: [PredictTweet]
+        X: [PredictTweet]
     
     PredictTweet:
         tweet_id: int
@@ -131,13 +131,13 @@
     
     BulkTask:
         id: int
-        tweets: [PredictTweet]
+        X: [PredictTweet]
 
 ### COMPLETED_INFLUENTIAL_TASK
 
     CompletedInfluentialTaskContract:
         id: int
-        X: [PridictionTweet]
+        X: [PredictTweet]
         y: [Results]
 
     Results:
@@ -149,12 +149,13 @@
 
     CompletedBulkTaskContract:
         id: int
-        X: [PridictionTweet]
+        X: [PredictTweet]
         y: [Results]
 
     Results:
         tweet_id: int
         negative: float
         positive: float
+
 
 
