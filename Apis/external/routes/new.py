@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from General.database import *
 from ..kafka_helper.producers import *
-from ..kafka_helper.contracts import *
+from General.kafkaContracts import *
 from ..models import Task
 
 new_router = APIRouter(

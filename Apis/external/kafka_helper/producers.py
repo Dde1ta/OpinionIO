@@ -1,4 +1,4 @@
-from .contracts import *
+from General.kafkaContracts import *
 from General.kafkaHelper import kafka_app
 
 

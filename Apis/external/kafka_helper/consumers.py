@@ -1,4 +1,5 @@
-from .contracts import *
+from General.kafkaContracts import *
+from General.kafkaHelper import kafka_app
 
 
 @kafka_app.consumes(topic="NEW_TASK")

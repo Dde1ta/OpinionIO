@@ -1,4 +1,10 @@
+from Apis.external.models import *
 from pydantic import BaseModel
+
+
+class TaskContract(Task):
+    ...
+
 
 class BaseContract(BaseModel):
     id: int
@@ -43,11 +49,11 @@ class ToPredictTweet(BaseModel):
     text: str
 
 
-class InfluentialTask(BaseContract):
+class InfluentialTaskContract(BaseContract):
     X: list[ToPredictTweet]
 
 
-class BulkTask(InfluentialTask):
+class BulkTaskContract(InfluentialTaskContract):
     ...
 
 
@@ -57,10 +63,9 @@ class Results(BaseModel):
     positive: float
 
 
-class CompletedInfluentialTaskContract(InfluentialTask):
+class CompletedInfluentialTaskContract(InfluentialTaskContract):
     y: list[Results]
 
 
 class CompletedBulkTaskContract(CompletedInfluentialTaskContract):
     ...
-
