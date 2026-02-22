@@ -7,13 +7,13 @@ class TaskContract(Task):
 
 
 class BaseContract(BaseModel):
-    id: int
+    task_id: int
 
 
 class UserMetrics(BaseModel):
     user_id: int
     followers: int
-    verified: int
+    verified: bool
 
 
 class TweetMetrics(BaseModel):
@@ -24,7 +24,7 @@ class TweetMetrics(BaseModel):
     quote_count: int
 
 
-class Metrics(BaseModel):
+class Metrics(BaseModel):  # till dispatcher
     user: UserMetrics
     tweet: TweetMetrics
 
