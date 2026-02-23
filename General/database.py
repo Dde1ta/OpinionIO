@@ -30,9 +30,9 @@ class InfluentialResults(Base):
     id = Column(Integer, primary_key=True, index=True)
     location = Column(String)
 
-    mode_sentiment = Column(Integer)
-    most_positive = Column(String)
-    most_negative = Column(String)
+    mode_sentiment = Column(Float)
+    most_positive = Column(Float)
+    most_negative = Column(Float)
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
@@ -46,8 +46,8 @@ class BulkResults(Base):
     location = Column(String)
 
     mode_sentiment = Column(Float)
-    most_positive = Column(String)
-    most_negative = Column(String)
+    most_positive = Column(Float)
+    most_negative = Column(Float)
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
@@ -60,7 +60,7 @@ class InfluentialTrainingData(Base):
 
     tweet = Column(String)
 
-    sentiment = Column(Integer)
+    sentiment = Column(Float)
 
     __table_args__ = (
         CheckConstraint('sentiment IN (0, 1)', name='check_sentiment_bool'),
@@ -74,7 +74,7 @@ class BulkTrainingData(Base):
 
     tweet = Column(String)
 
-    sentiment = Column(Integer)
+    sentiment = Column(Float)
 
     __table_args__ = (
         CheckConstraint('sentiment IN (0, 1)', name='check_sentiment_bool'),

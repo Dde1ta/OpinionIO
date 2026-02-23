@@ -69,3 +69,9 @@ class CompletedInfluentialTaskContract(InfluentialTaskContract):
 
 class CompletedBulkTaskContract(CompletedInfluentialTaskContract):
     ...
+
+
+class Output(BaseContract):
+    most_positive: float
+    most_negative: float
+    modal_sentiment: float

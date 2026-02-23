@@ -8,3 +8,5 @@ asyncpg~=0.31.0
 xgboost~=3.2.0
 torch~=2.10.0
 transformers~=5.2.0
+numpy~=2.4.2
+requests~=2.32.5
