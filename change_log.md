@@ -16,3 +16,13 @@
   - Added tokenizer loading with fallback to `huawei-noah/TinyBERT_General_4L_312D`.
   - Added device-aware inference (CPU/CUDA), softmax scoring, and contract output mapping to `CompletedInfluentialTaskContract`.
 - Noted Kafka orchestration wiring point for influential flow in `Cloned/Models/kafka_helper/consumers.py` (`consume_influential_task`).
+
+## 2026-02-24
+
+- Fixed `send_status_to_db` function issues:
+  - Corrected URL path from `/api/internal/status/` to `/api/internal/update/status/`
+  - Fixed URL construction to use only `settings.INTERNAL_API_URL` (already includes port)
+  - Changed request format from JSON body to query parameters to match endpoint signature
+  - Fixed `status.py` endpoint to use `await db.get()` instead of `db.get()`
+  - Added proper error handling with 404 check and transaction rollback
+  - Added proper null check for task not found scenario

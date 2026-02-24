@@ -4,7 +4,7 @@ from General.kafkaContracts import *
 from Apis.internal.Result_handler.filter_results import log_odds_of_sentiments
 
 training_router = APIRouter(
-    prefix="api/internal/save"
+    prefix="/api/internal/save"
 )
 
 

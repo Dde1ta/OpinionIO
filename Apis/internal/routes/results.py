@@ -4,7 +4,7 @@ from General.kafkaContracts import *
 from Apis.internal.Result_handler.filter_results import filter_result
 
 results_router = APIRouter(
-    prefix="api/internal/results"
+    prefix="/api/internal/results"
 )
 
 
