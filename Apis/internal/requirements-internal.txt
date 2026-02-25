@@ -1,12 +1,10 @@
+# Internal API Dependencies
 fastapi~=0.113.0
+uvicorn~=0.30.0
 pydantic~=2.9.0
-SQLAlchemy~=2.0.42
 pydantic-settings~=2.5.2
 fastkafka~=0.8.0
+SQLAlchemy~=2.0.42
 asyncpg~=0.31.0
-xgboost~=3.2.0
-torch~=2.10.0
-transformers~=5.2.0
 numpy~=2.4.2
-requests~=2.32.5
 httpx~=0.28.1

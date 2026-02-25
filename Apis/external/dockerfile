@@ -1,0 +1,24 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Copy requirements first (for better layer caching)
+COPY Apis/external/requirements-external.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements-external.txt
+
+# Copy shared General module
+COPY General/ ./General/
+
+# Copy only the external API
+COPY Apis/__init__.py ./Apis/
+COPY Apis/external/ ./Apis/external/
+
+# Set Python path so imports work
+ENV PYTHONPATH=/app
+
+# Expose the external API port
+EXPOSE 8000
+
+CMD ["uvicorn", "Apis.external.main:external", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,5 +1,10 @@
-from Apis.external.models import *
 from pydantic import BaseModel
+
+
+class Task(BaseModel):
+    id: int
+    topic: str
+    region: str
 
 
 class TaskContract(Task):

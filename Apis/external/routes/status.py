@@ -7,7 +7,7 @@ status_router = APIRouter(
 )
 
 
-@status_router.get("/{task_id: int}")
+@status_router.get("/{task_id}")
 async def status(task_id: int, db: AsyncSession = Depends(get_db)):
     try:
         task = await db.get(TaskStatus, task_id)

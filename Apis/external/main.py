@@ -5,6 +5,8 @@ from General.logger import Logger
 from General.config import settings  # <-- Import settings
 from General.database import init_db  # <-- Make sure this is imported!
 from .routes.new import *
+from .routes.status import *
+
 
 logger = Logger()
 
@@ -25,3 +27,4 @@ async def lifespan(app: FastAPI):
 
 external = FastAPI(lifespan=lifespan)
 external.include_router(new_router)
+external.include_router(status_router)
