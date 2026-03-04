@@ -564,9 +564,9 @@ docker compose down
 ---
 
 ## 👥 Contributors
-Divyansh
-Kushagra 
-Muskan
+- Divyansh
+- Kushagra
+- Muskan
 ---
 
 ## 🙏 Acknowledgments
