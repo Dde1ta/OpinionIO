@@ -1,7 +1,10 @@
-# Metrics Service Dependencies
-fastkafka~=0.8.0
-fastapi~=0.115.0
-uvicorn~=0.32.0
-aiofiles~=24.1.0
+# External API Dependencies
+fastapi~=0.113.0
+uvicorn~=0.30.0
 pydantic~=2.9.0
 pydantic-settings~=2.5.2
+fastkafka~=0.8.0
+SQLAlchemy~=2.0.42
+asyncpg~=0.31.0
+httpx~=0.28.1
+uuid

@@ -8,7 +8,8 @@ from .send_result import set_flag_bulk, set_flag_influential
 logger = Logger(name="Internal.ResultConsumer")
 
 
-@kafka_app.consumes(topic="COMPLETED_INFLUENTIAL_TASK")
+@kafka_app.consumes(topic="COMPLETED_INFLUENTIAL_TASK",
+                    group_id="results_worker_group")
 async def consume_influential_result(msg: CompletedInfluentialTaskContract) -> CompletedInfluentialTaskContract:
     logger.info(f"[CONSUME] Received COMPLETED_INFLUENTIAL_TASK - Task ID: {msg.id}, Results: {len(msg.y)}")
 
@@ -22,7 +23,8 @@ async def consume_influential_result(msg: CompletedInfluentialTaskContract) -> C
     return msg
 
 
-@kafka_app.consumes(topic="COMPLETED_BULK_TASK")
+@kafka_app.consumes(topic="COMPLETED_BULK_TASK",
+                    group_id="results_worker_group")
 async def consume_bulk_result(msg: CompletedBulkTaskContract) -> CompletedBulkTaskContract:
     logger.info(f"[CONSUME] Received COMPLETED_BULK_TASK - Task ID: {msg.id}, Results: {len(msg.y)}")
 

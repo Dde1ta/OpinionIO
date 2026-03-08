@@ -8,7 +8,8 @@ from Models.XGBoost.producer import submit_result_xgboost
 logger = Logger(name="XGBoost.Consumer")
 
 
-@kafka_app.consumes(topic="BULK_TASK")
+@kafka_app.consumes(topic="BULK_TASK",
+                    group_id="XG_boost_worker_group")
 async def consume_bulk_task(msg: BulkTaskContract) -> BulkTaskContract:
     logger.info(f"[CONSUME] Received BULK_TASK - Task ID: {msg.id}, Items: {len(msg.X)}")
     

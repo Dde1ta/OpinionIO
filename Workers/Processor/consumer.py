@@ -9,7 +9,8 @@ from Workers.send_status import send_status_to_db
 logger = Logger(name="Processor.Consumer")
 
 
-@kafka_app.consumes(topic="META_DATA")
+@kafka_app.consumes(topic="META_DATA",
+                    group_id="processor_worker_group")
 async def next_task(msg: MetaDataContract) -> MetaDataContract:
     logger.info(f"[CONSUME] Received META_DATA - Task ID: {msg.id}, Tweets: {len(msg.tweets)}")
     

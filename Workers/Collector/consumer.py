@@ -9,7 +9,8 @@ from ..send_status import send_status_to_db
 logger = Logger(name="Collector.Consumer")
 
 
-@kafka_app.consumes(topic="NEW_TASK")
+@kafka_app.consumes(topic="NEW_TASK",
+                    group_id="collector_worker_group")
 async def next_task(msg: TaskContract) -> TaskContract:
     logger.info(f"[CONSUME] Received NEW_TASK - Task ID: {msg.id}, Topic: {msg.topic}")
     

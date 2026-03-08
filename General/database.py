@@ -79,6 +79,19 @@ class BulkTrainingData(Base):
         CheckConstraint('sentiment IN (0, 1)', name='check_sentiment_bool'),
     )
 
+# ── 1. Define the Database Table ─────────────────────────────────────────────
+class ResearchMetricDB(Base):
+    __tablename__ = "research_metrics"
+
+    # We use a separate db_id as primary key in case Kafka sends duplicate IDs
+    db_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    id = Column(String, index=True)
+    process = Column(String)
+    start_time = Column(String)
+    end_time = Column(String)
+    total_time = Column(String)
+
+
 
 async def get_db():
     async with AsyncSessionLocal() as session:

@@ -6,9 +6,12 @@ from Models.TinyBert.logic import predict_influential_task
 from Models.TinyBert.producer import submit_result_tiny_bert
 
 logger = Logger(name="TinyBERT.Consumer")
+ 
 
-
-@kafka_app.consumes(topic="INFLUENTIAL_TASK")
+@kafka_app.consumes(
+    topic="INFLUENTIAL_TASK", # (Or whatever your topic name is)
+    group_id="tiny_bert_worker_group",    # 30 seconds
+)
 async def consume_influential_task(msg: InfluentialTaskContract) -> InfluentialTaskContract:
     logger.info(f"[CONSUME] Received INFLUENTIAL_TASK - Task ID: {msg.id}, Items: {len(msg.X)}")
     
