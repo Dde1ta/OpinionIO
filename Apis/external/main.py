@@ -26,7 +26,7 @@ external = FastAPI(lifespan=lifespan)
 # --- ADD THIS CORS BLOCK ---
 external.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, replace "*" with your React app's URL
+    allow_origins=["http://43.205.209.244:5173/"], # In production, replace "*" with your React app's URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
